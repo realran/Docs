@@ -10,7 +10,7 @@ const repoUrl = 'https://github.com/realran/Docs'
 const config = {
   title: 'RealRan Docs',
   tagline: 'Dinosaurs are cool',
-  url: repoUrl,
+  url: 'https://realran.github.io',
   baseUrl: '/Docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -70,7 +70,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/intro',
+                to: 'intro',
               },
             ],
           },
