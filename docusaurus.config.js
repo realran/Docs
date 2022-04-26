@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require('prism-react-renderer/themes/github')
+const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
 const repoUrl = 'https://github.com/realran/Docs'
 
@@ -29,7 +29,7 @@ const config = {
           // Please change this to your repo.
           editUrl: ({ docPath }) => {
             return `${repoUrl}/tree/main/docs/${docPath}`
-          }
+          },
         },
         blog: false,
         theme: {
@@ -42,8 +42,10 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      hideableSidebar: true,
       navbar: {
         title: 'RealRan',
+        hideOnScroll: true,
         logo: {
           alt: 'RealRan Logo',
           src: 'img/logo.png',
@@ -91,6 +93,6 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-};
+}
 
-module.exports = config;
+module.exports = config
