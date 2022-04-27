@@ -1,6 +1,6 @@
 ## Introduction
 
-PlatON built-in contract (contract address: `0x3000000000000000000000000000000000000001`) provides a function to generate VRF. The contract supports returning up to 500 random values in a byte array, in which every chunk of 32 bytes represents a random value. To help developers easily use the VRF service, the VRF contract encapsulates calls to the built-in contract and the `VRFCoordinator` contract also provides pragmatic functions, such as **subcription creation**, **consumer registration**, **synchronous/asynchronous random value generation**, **contract event emittance** and others.  
+PlatON built-in contract (contract address: `0x3000000000000000000000000000000000000001`) provides a function to generate VRF. The contract supports returning up to 500 random values in a byte array, in which every chunk of 32 bytes represents a random value. To help developers easily use the VRF service, the VRF contract encapsulates calls to the built-in contract and the `VRFCoordinator` contract also provides pragmatic functions, such as **subscription creation**, **consumer registration**, **synchronous/asynchronous random value generation**, **contract event emitting** and others.  
 
 ## Contract overview
 
@@ -41,7 +41,7 @@ Open [Remix](https://remix.ethereum.org/) and import [VRFContract contracts](htt
 ![contracts_structure](./imgs/contracts_structure.png) 
 
 
-For this example, use the `VRFConsumer.sol` sample contract in the smaple folder. This contract imports the following dependencies:
+For this example, use the `VRFConsumer.sol` sample contract in the sample folder. This contract imports the following dependencies:
   - `VRFCoordinator.sol`
   - `VRFConsumerBase.sol`
 
@@ -172,3 +172,19 @@ contract VRFConsumer is VRFConsumerBase {
   }
 }
  ```
+
+ In this example, The `VRFConsumer` contract address is the `VRFCoordinator` subscription owner and uses that subscription. The consumer contract uses static configuration parameters.
+
+ The contract includes the following parameters:
+
+  - `s_subscriptionId`: the subscription ID.
+  - `vrfCoordinator`: the address of the PlatON VRFCoordinator contract.
+  - `s_randomWords`: used to store random values.
+
+
+ The contract includes the following functions:
+
+  - `createNewSubscription()`: creates a new subscription and add the consumer itself to the subscription when the contract is initially deployed.
+  - `requestRandomWords()`: requests random values asynchronously.
+  - `fulfillRandomWords()`: receives random values and stores them with the contract.
+  - `syncRequestRandomWords()`: requests random values synchronously.
