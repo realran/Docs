@@ -12,7 +12,7 @@ const config = {
   tagline: 'Dinosaurs are cool',
   url: 'https://realran.github.io',
   baseUrl: '/Docs/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/logo.png',
   organizationName: 'realran',
@@ -53,7 +53,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'index',
             position: 'left',
             label: 'Docs',
           },
@@ -72,7 +72,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: 'intro',
+                to: '/',
               },
             ],
           },
