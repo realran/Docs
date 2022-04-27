@@ -52,12 +52,6 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'index',
-            position: 'left',
-            label: 'Docs',
-          },
-          {
             href: repoUrl,
             label: 'GitHub',
             position: 'right',
