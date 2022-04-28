@@ -1,20 +1,3 @@
-## Introduction
-
-PlatON built-in contract (contract address: `0x3000000000000000000000000000000000000001`) provides a function to generate VRF. The contract supports returning up to 500 random values in a byte array, in which every chunk of 32 bytes represents a random value. To help developers easily use the VRF service, the VRF contract encapsulates calls to the built-in contract and the `VRFCoordinator` contract also provides pragmatic functions, such as **subscription creation**, **consumer registration**, **synchronous/asynchronous random value generation**, **contract event emitting** and others.  
-
-## Contract overview
-
-The current version is `PlatON VRF v1`. In this version, the generated random values will not be verified on the chain. Also, developers or consumers need not pay fees for gas consumption of the callback triggered by the `VRFCoordinator` contract during the asynchronous request of random values. However, the related parameters and implementations are reserved in the contract. When integrating with the version, developers should ignore them first and use default values.  
-
-![contracts_overview](./imgs/contracts_overview.png)
-
-To use PlatON VRF, follow the steps below (Developers could refer to the `VRFConsumer.sol` sample contract):
-
-1. Get the `VRFCoordinator` address based on the network in the <a href="#Preparation">Preparation section</a> and update the `vrfCoordinator` address in the  `VRFConsumer.col`.
-2. Deploy the `VRFConsumer.col` contract. This example contract includes the `createNewSubscription()` function in the `constructor()` that creates the subscription and adds itself as a consumer automatically when you deploy it.
-3. Call the `syncRequestRandomWords()` function in the `VRFConsumer.col` contract to synchronously get random values.
-4. Or call the `requestRandomWords()` function in the `VRFConsumer.col` contract to asynchronously request random values which are returned via the callback function `fulfillRandomWords()`.
-
 
 One simple example is shown below to demonstrate how to use Remix IDE to deploy the `VRFConsumer.sol` contract on PlatON and get random values. 
 
