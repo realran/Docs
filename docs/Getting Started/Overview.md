@@ -8,7 +8,7 @@ sidebar_position: 1
 
 RealRan is dedicated to building the Multi-party Trust Protocol in cryptography to power the next generation computing scenario, including Hybrid Smart Contract, Web3 and Metaverse.
 
-## RealRan VRF
+## About VRF
 
 The on-chain random number of PlatON comes from the Nonce field in the block header, which uses the Nonce of the parent block as the seed and generates the random number with the private key signature of the proposer of the current block. In practical use, the [1,33] byte of this field can be taken as the random source of the verifiable random number.
 
@@ -18,9 +18,9 @@ We launched `VRF V1` version. In this version, we refer to Chainlink's subscript
 
 The brief contract structure design is as follows:
 
-![contracts_overview](C:/Users/Vivi/Desktop/LatticeX/metabase/文档/Docs/realran/docs/Getting Started/imgs/contracts_overview.png)
+![contracts_overview](./imgs/contracts_overview.png)
 
-### How to use
+## How to use
 
 [VRFConsumer.sol](https://github.com/realran/VRFContract/blob/main/sample/VRFConsumer.sol) is a sample contract, you can refer to this contract and do the following steps to easily enable VRF integration :
 
@@ -29,7 +29,7 @@ The brief contract structure design is as follows:
 3. Call the `syncRequestRandomWords()` function in the `VRFConsumer.col` contract to synchronously get random values.
 4. Or call the `requestRandomWords()` function in the `VRFConsumer.col` contract to asynchronously request random values which are returned via the callback function `fulfillRandomWords()`.
 
-For more, please refer to：[Get a Random Number](https://realran.github.io/Docs/Getting%20Started/Get%20a%20Random%20Number)
+For more, please refer to：[Get a Random Number](./Get%20a%20Random%20Number)
 
 
 
