@@ -8,7 +8,7 @@ One simple example is shown below to demonstrate how to use Remix IDE to deploy 
 	- Mainnet: `https://openapi2.platon.network/rpc`
 	- Devnet: `https://devnetopenapi2.platon.network/rpc`
 - `VRFCoordinator` contract address：
-	- Mainnet:
+	- Mainnet: `0x57baee54708657302e96004279a15d7c98cd1a42`
 	- Devnet: `0x356d552150f460f57Cd722DC4f3D03A3f2B8386C`
 
 ## MetaMask Setup
