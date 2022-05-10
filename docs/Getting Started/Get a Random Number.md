@@ -13,13 +13,13 @@ One simple example is shown below to demonstrate how to use Remix IDE to deploy 
 
 ## MetaMask Setup
 
-MetaMask is the most widely used browser plug-in wallet and users can easily interact with PlatON Devnet and Mainnet. see the [MetaMask Configure PlatON/Alaya Network](https://devdocs.platon.network/docs/en/MetaMask/) to learn to use it.
+MetaMask is the most widely used browser plug-in wallet and users can easily interact with PlatON Devnet and Mainnet. See the [MetaMask Configure PlatON/Alaya Network](https://devdocs.platon.network/docs/en/MetaMask/) to learn to use it.
 
 ## Deploy a VRF consumer contract
 
 ### Import VRFContract Repo
 
-Open [Remix](https://remix.ethereum.org/) and import [VRFContract contracts](https://github.com/realran/VRFContract)
+Open the [VRFConsumer.sol](https://remix.ethereum.org/#url=https://github.com/realran/VRFContract/blob/main/sample/VRFConsumer.sol) contract in Remix.
 
 ![contracts_structure](./imgs/contracts_structure.png) 
 
@@ -69,8 +69,8 @@ The deployed `VRFConsumer` contract requests random values from `VRFCoordinator`
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "../dev/VRFCoordinator.sol";
-import "../VRFConsumerBase.sol";
+import "@realrancrypto/contracts@1.0.0/src/dev/VRFCoordinator.sol";
+import "@realrancrypto/contracts@1.0.0/src/VRFConsumerBase.sol";
 
 contract VRFConsumer is VRFConsumerBase {
   VRFCoordinator COORDINATOR;
@@ -78,21 +78,16 @@ contract VRFConsumer is VRFConsumerBase {
   // PlatON DevNet coordinator. 
   address vrfCoordinator = 0x356d552150f460f57Cd722DC4f3D03A3f2B8386C;
   
-  // The gas lane to use, which specifies the maximum gas price to bump to.
+  // Default parameters, do not need to be modified.
   bytes32 keyHash = 0xd89b2bf150e3b9e13446986e571fb9cab24b13cea0a43ea20a6049a85cc807cc;
 
   // Your subscription ID.
   uint64 s_subscriptionId;
 
-  // Depends on the number of requested values that you want sent to the
-  // fulfillRandomWords() function. Storing each word costs about 20,000 gas,
-  // so 100,000 is a safe default for this example contract. Test and adjust
-  // this limit based on the network that you select, the size of the request,
-  // and the processing of the callback request in the fulfillRandomWords()
-  // function.
+  // Default parameters, do not need to be modified.
   uint32 callbackGasLimit = 100;
 
-  // The default is 3, but you can set this higher.
+  // Default parameters, do not need to be modified.
   uint16 requestConfirmations = 100;
 
   uint256 public s_requestId;
