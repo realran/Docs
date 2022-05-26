@@ -10,6 +10,7 @@ One simple example is shown below to demonstrate how to use Remix IDE to deploy 
 - `VRFCoordinator` contract address：
 	- Mainnet: `0x57baee54708657302e96004279a15d7c98cd1a42`
 	- Devnet: `0x356d552150f460f57Cd722DC4f3D03A3f2B8386C`
+- Faucet (optional): `https://faucet.platon.network/faucet`
 
 ## MetaMask Setup
 
@@ -27,6 +28,13 @@ Open the [VRFConsumer.sol](https://remix.ethereum.org/#url=https://github.com/re
 For this example, use the `VRFConsumer.sol` sample contract in the sample folder. This contract imports the following dependencies:
   - `VRFCoordinator.sol`
   - `VRFConsumerBase.sol`
+
+The sample contract imports the VRFContract codebase and uses relative paths to import dependencies. However, it is not a must. You could directly import dependencies from [NPM](https://www.npmjs.com/package/@realrancrypto/contracts) without loading the codebase. To do it, just add codes at the beginning of your consumer contract:
+
+```
+import "@realrancrypto/contracts/src/dev/VRFCoordinator.sol";
+import "@realrancrypto/contracts/src/VRFConsumerBase.sol";
+```
 
 The contract also includes pre-configured values for the necessary request parameters such as `keyHash`, `callbackGasLimit`, and `requestConfirmations`. When you deploy your own contract, you can use the same value as provided in the contract. For the parameter `vrfCoordinator`, You can change its value based on different networks.
 
