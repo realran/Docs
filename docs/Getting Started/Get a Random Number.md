@@ -17,7 +17,7 @@ One simple example is shown below to demonstrate how to use Remix IDE to deploy 
 
 ## MetaMask Setup
 
-MetaMask is the most widely used browser plug-in wallet and users can easily interact with PlatON Devnet and Mainnet. See the [MetaMask Configure PlatON/Alaya Network](https://devdocs.platon.network/docs/en/MetaMask/) to learn to use it.
+MetaMask is the most widely used browser plug-in wallet and users can easily interact with PlatON Devnet and Mainnet. See the [MetaMask Configure PlatON Network](https://devdocs.platon.network/docs/en/MetaMask/) to learn to use it.
 
 ## Deploy a VRF consumer contract
 
