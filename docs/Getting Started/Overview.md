@@ -28,7 +28,7 @@ The brief contract structure design is as follows:
 2. Deploy the `VRFConsumerV2.sol` contract. This example contract includes the `createNewSubscription()` function in the `constructor()` that creates the subscription and adds itself as a consumer automatically when you deploy it.
 3. Call the `requestRandomWords()` function in the `VRFConsumerV2.col` contract to asynchronously request random values which are returned via the callback function `fulfillRandomWords()`.
 
-For more, please refer to：[Get a Random Number](../Get%20a%20Random%20Number)
+For more, please refer to：[Get a Random Number](./Get%20a%20Random%20Number)
 
 
 
