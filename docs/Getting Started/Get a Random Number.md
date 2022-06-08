@@ -1,18 +1,18 @@
+
 One simple example is shown below to demonstrate how to use Remix IDE to deploy the `VRFConsumer.sol` contract on PlatON and get random values. 
 
 ##  Preparation
-
 - MetaMask
 - The Remix IDE
 - PlatON RPC URL:
-  - Mainnet: `https://openapi2.platon.network/rpc`
-  - Devnet: `https://devnetopenapi2.platon.network/rpc`
+	- Mainnet: `https://openapi2.platon.network/rpc`
+	- Devnet: `https://devnetopenapi2.platon.network/rpc`
 - `VRFCoordinator` contract address：
-  - Mainnet: `/`
-  - Devnet: `0xFE5F2A9d5227Fb1c4541e3D67aaF516d7d51495C`
+	- Mainnet: `/`
+	- Devnet: `0xFE5F2A9d5227Fb1c4541e3D67aaF516d7d51495C`
 - `Key Hash`
-  - Mainnet: `/`
-  - Devnet: `0x78e96b19f860056881cc2552c8f8083fa1dbed8a5ab010d3626a4000fb528e9f`
+	- Mainnet: `/`
+	- Devnet: `0x78e96b19f860056881cc2552c8f8083fa1dbed8a5ab010d3626a4000fb528e9f`
 - Faucet (optional): `https://faucet.platon.network/faucet`
 
 ## MetaMask Setup
@@ -25,10 +25,9 @@ MetaMask is the most widely used browser plug-in wallet and users can easily int
 
 Open the [VRFConsumerV2.sol](https://remix.ethereum.org/#url=https://github.com/realran/VRFContract/blob/main/sample/VRFConsumerV2.sol) contract in Remix.
 
-![contracts_structure](.\imgs\contracts_structure.png) 
+![contracts_structure](./imgs/contracts_structure.png) 
 
 For this example, use the `VRFConsumerV2.sol` sample contract in the sample folder. This contract imports the following dependencies:
-
   - `VRFCoordinatorV2Interface.sol`
   - `VRFConsumerBaseV2.sol`
 
@@ -45,7 +44,7 @@ The contract also includes pre-configured values for the necessary request param
 
 Before compiling, please get the `keyHash` and `VRFCoordinator` address based on the network in the <a href="#Preparation">Preparation section</a>. In the `VRFConsumerV2.sol` contract, use **Devnet's** `VRFCoordinator` address.
 
-![consumer_compile](.\imgs\consumer_compile.png)
+![consumer_compile](./imgs/consumer_compile.png)
 
 1. Open the `VRFConsumerV2.sol` contract in Remix.
 2. Click the **Solidity compiler** tab on the left sidebar.
@@ -53,7 +52,7 @@ Before compiling, please get the `keyHash` and `VRFCoordinator` address based on
 
 ###  Deploy the `VRFConsumerV2.sol` contract
 
-![consumer_deploy](.\imgs\consumer_deploy.png)
+![consumer_deploy](./imgs/consumer_deploy.png)
 
 1. On the Remix left sidebar, click the **Deploy & run transactions** tab.
 2. select the **Injected Web3** Environment.
@@ -65,11 +64,11 @@ The deployed `VRFConsumerV2` contract requests random values from `VRFCoordinato
 
 1. Request 10 VRF values
 
-![consumer_request](.\imgs\consumer_request.png)
+![consumer_request](./imgs/consumer_request.png)
 
 2. Get the 10th VRF value at index 9
 
-![consumer_ret](.\imgs\consumer_ret.png)
+![consumer_ret](./imgs/consumer_ret.png)
 
 ## Analyze the `VRFConsumerV2` contract
 
