@@ -1,0 +1,51 @@
+ Welcome to Remix 0.24.1 
+
+Your files are stored in indexedDB, 1.07 MB / 63.65 GB used
+
+You can use this terminal to: 
+Check transactions details and start debugging.
+Execute JavaScript scripts:
+ - Input a script directly in the command line interface 
+ - Select a Javascript file in the file explorer and then run \`remix.execute()\` or \`remix.exeCurrent()\`  in the command line interface  
+ - Right click on a JavaScript file in the file explorer and then click \`Run\` 
+The following libraries are accessible:
+web3 version 1.5.2
+ethers.js 
+remix
+Type the library name to see available commands.
+creation of VRFConsumerV2 pending...
+view on etherscan
+[block:22065621 txIndex:0]from: 0x8FC...B7cdCto: VRFConsumerV2.(constructor)value: 0 weidata: 0x60a...a0033logs: 0hash: 0xd45...30fb2
+status	true Transaction mined and execution succeed
+transaction hash	0x0b70a2cc1e2d6443c049d5625693392ad08fe7c9a352d128780fc6218f5e7da2
+from	0x8FC4c1492F10A9310dCD94c2E9a2cb68A3dB7cdC
+to	VRFConsumerV2.(constructor)
+gas	947538 gas
+transaction cost	947538 gas 
+input	0x60a...a0033
+decoded input	{}
+decoded output	 - 
+logs	[]
+val	0 wei
+transact to VRFConsumerV2.requestRandomWords pending ... 
+view on etherscan
+[block:22065679 txIndex:0]from: 0x8FC...B7cdCto: VRFConsumerV2.requestRandomWords(uint32) 0x8f9...6ae4cvalue: 0 weidata: 0xe72...0000alogs: 0hash: 0x4f7...9dc3a
+call to VRFConsumerV2.s_randomWords
+call to VRFConsumerV2.s_randomWords errored: Internal JSON-RPC error.
+{
+  "code": -32000,
+  "message": "execution reverted"
+}
+call to VRFConsumerV2.s_randomWords
+call to VRFConsumerV2.s_randomWords errored: Internal JSON-RPC error.
+{
+  "code": -32000,
+  "message": "execution reverted"
+}
+transact to VRFConsumerV2.requestRandomWords pending ... 
+view on etherscan
+[block:22065701 txIndex:0]from: 0x8FC...B7cdCto: VRFConsumerV2.requestRandomWords(uint32) 0x8f9...6ae4cvalue: 0 weidata: 0xe72...0000alogs: 0hash: 0xe26...ca83f
+call to VRFConsumerV2.s_randomWords
+CALL
+[call]from: 0x8FC4c1492F10A9310dCD94c2E9a2cb68A3dB7cdCto: VRFConsumerV2.s_randomWords(uint256)data: 0xf6e...00009
+>
