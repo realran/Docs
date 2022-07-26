@@ -1,5 +1,5 @@
 
-One simple example is shown below to demonstrate how to use Remix IDE to deploy the `VRFConsumer.sol` contract on PlatON and get random values. 
+One simple example is shown below to demonstrate how to use Remix IDE to deploy the `VRFConsumerV2.sol` contract on PlatON and get random values. 
 
 ##  Preparation
 - MetaMask
@@ -23,7 +23,7 @@ MetaMask is the most widely used browser plug-in wallet and users can easily int
 
 ### Import VRFContract Repo
 
-Open the [VRFConsumerV2.sol](https://remix.ethereum.org/#url=https://github.com/realran/VRFContract/blob/main/sample/VRFConsumerV2.sol) contract in Remix.
+Open the [VRFConsumerV2.sol](https://remix.ethereum.org/#url=https://github.com/realran/VRFContract/blob/main/sample/v2.1.0/VRFConsumerV2.sol) contract in Remix.
 
 ![contracts_structure](./imgs/contracts_structure.png) 
 
@@ -34,8 +34,8 @@ For this example, use the `VRFConsumerV2.sol` sample contract in the sample fold
 The sample contract imports the VRFContract codebase and uses relative paths to import dependencies. However, it is not a must. You could directly import dependencies from [NPM](https://www.npmjs.com/package/@realrancrypto/contracts) without loading the codebase. To do it, just add codes at the beginning of your consumer contract:
 
 ```
-import "@realrancrypto/contracts@2.0.0/src/interfaces/VRFCoordinatorV2Interface.sol";
-import "@realrancrypto/contracts@2.0.0/src/VRFConsumerBaseV2.sol";
+import "@realrancrypto/contracts@2.1.0/src/interfaces/VRFCoordinatorV2Interface.sol";
+import "@realrancrypto/contracts@2.1.0/src/VRFConsumerBaseV2.sol";
 ```
 
 The contract also includes pre-configured values for the necessary request parameters such as `callbackGasLimit`, `requestConfirmations`. When you deploy your own contract, you can use the same value as provided in the contract. For the parameter `keyHash`, `vrfCoordinator`, You can change its value based on different networks.
@@ -55,8 +55,26 @@ Before compiling, please get the `keyHash` and `VRFCoordinator` address based on
 ![consumer_deploy](./imgs/consumer_deploy.png)
 
 1. On the Remix left sidebar, click the **Deploy & run transactions** tab.
-2. select the **Injected Web3** Environment.
+
+2. select the **Injected Provider - Metamask** Environment.
+
 3. Select the `VRFConsumerV2` contract and click the **Deploy** button. MetaMask opens and asks you to confirm the transaction.
+
+4. A subscription is automatically created when the contract is deployed, and the subscription ID is queried.
+
+![consumer_subscriptionId](./imgs/consumer_subscriptionId.png)
+
+###  Load `VRCoordinatorV2.sol` contract and recharge subscription
+
+1. Open the [VRCoordinatorV2.sol](https://remix.ethereum.org/#url=https://github.com/realran/VRFContract/blob/main/sample/v2.1.0/VRFCoordinatorV2.sol) contract in Remix and compile it.
+
+2. Load `VRCoordinatorV2.sol` contract, fill in the `VRFCoordinator` address in the red box 3 and click the At Address button
+
+![coordinator_deploy](./imgs/coordinator_deploy.png) 
+
+3.  Recharge subscription, in the example, recharge 1 LAT to the subscription with ID 29
+
+![recharge_subscriptionId](./imgs/recharge_subscriptionId.png)
 
 ### Request random values
 
@@ -78,21 +96,21 @@ As a consumer of random numbers, the Consumer contract also has subscription man
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@realrancrypto/contracts@2.0.0/src/interfaces/VRFCoordinatorV2Interface.sol";
-import "@realrancrypto/contracts@2.0.0/src/VRFConsumerBaseV2.sol";
+import "@realrancrypto/contracts@2.1.0/src/interfaces/VRFCoordinatorV2Interface.sol";
+import "@realrancrypto/contracts@2.1.0/src/VRFConsumerBaseV2.sol";
 
 contract VRFConsumerV2 is VRFConsumerBaseV2 {
 
   VRFCoordinatorV2Interface COORDINATOR;
 
   // The proving key hash key associated with the bls public key
-  bytes32 keyHash = 0x78e96b19f860056881cc2552c8f8083fa1dbed8a5ab010d3626a4000fb528e9f;
+  bytes32 keyHash = 0xefa695190d528bcfb742f4bc74f637209844727c71bcadf1e175aee94ded9d8e;
 
   // Your subscription ID.
-  uint64 s_subscriptionId;
+  uint64 public s_subscriptionId;
 
-  // Coordinate contract address on PlatON Devnet
-  address vrfCoordinator = 0xFE5F2A9d5227Fb1c4541e3D67aaF516d7d51495C;
+  // PlatON Devnet coordinator.
+  address vrfCoordinator = 0x3fB03626eDB28320cdD92656f1814b425D69d595;
 
   // A reasonable default is 2000000, but this value could be different
   // on other networks.
@@ -109,7 +127,6 @@ contract VRFConsumerV2 is VRFConsumerBaseV2 {
   constructor() VRFConsumerBaseV2(vrfCoordinator) {
     COORDINATOR = VRFCoordinatorV2Interface(vrfCoordinator);
     s_owner = msg.sender;
-    //Create a new subscription when you deploy the contract.
     createNewSubscription();
   }
 
