@@ -18,7 +18,7 @@ VRF2.0 will be launched on PlatON mainnet soon. After continuous optimization an
 
 The following is a simple system structure description, which can give you a clear understanding of the composition of VRF system and how to use it.
 
-![image-20220802174125651](C:\Users\Vivi\AppData\Roaming\Typora\typora-user-images\image-20220802174125651.png)
+![arche](./imgs/arche.jpg)
 
 Composition introduction：
 
