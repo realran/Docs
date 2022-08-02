@@ -10,27 +10,27 @@ RealRan is dedicated to building the Multi-party Trust Protocol in cryptography 
 
 ## About VRF
 
-In VRF 1.0, we leverage the PlatON built-in contract to generate on-chain random values in a more developer-friendly and Chainlink-compatible way. Based on the previous version, we released VRF 2.0 beta version, which has been deployed on the PlatON Devnet.
+VRF provides secure and verifiable random numbers for on-chain contracts, which enables random number consumers to focus more on their own business. And the ability to get multiple random numbers in one request may satisfy more usage scenarios.  
 
-The version mainly introduces an off-chain value generating mechanism. After receiving the event, the off-chain service integrating the BN254 curve algorithm generates the random values and proofs, and then verifies them on the chain before fulfilling the values to the user contract.
+VRF2.0 will be launched on PlatON mainnet soon. After continuous optimization and iteration, VRF improved the subscription payment model, and reduced the gas consumption of each request by introducing a more secure ECDSA algorithm.
 
-The brief contract structure design is as follows:
+## Architecture
 
-![contracts_overview](./imgs/contracts_overview.png)
+The following is a simple system structure description, which can give you a clear understanding of the composition of VRF system and how to use it.
 
-- BLS Service : use multiple BLS private keys to sign seeds separately and aggregate the signatures.
+![arche](./imgs/arche.jpg)
 
-## How to use
+Composition introduction：
 
-[VRFConsumerV2.sol](https://github.com/realran/VRFContract/blob/main/sample/VRFConsumerV2.sol) is a sample contract, you can refer to this contract and do the following steps to easily enable VRF integration :
+- **Developer** : It can represent an individual developer or a team that need to use the VRF system. It should be noted that the wallet address that created the subscription will become its owner, and has the right to manage the consumers and funds belonging to the subscription. At the same time, anyone can recharge the subscription, not just the owner.
 
-1. Get the `Key Hash` and `VRFCoordinator` address based on the network in the and update the `keyHash` and `vrfCoordinator` address in the  `VRFConsumerV2.sol`.
-2. Deploy the `VRFConsumerV2.sol` contract. This example contract includes the `createNewSubscription()` function in the `constructor()` that creates the subscription and adds itself as a consumer automatically when you deploy it.
-3. Call the `requestRandomWords()` function in the `VRFConsumerV2.col` contract to asynchronously request random values which are returned via the callback function `fulfillRandomWords()`.
+- **[Subcription Management Dapp](https://vrf.realran.com/)**:  This is a subscription management platform. This allows you to interact with on-chain contracts([VRFCoordinatorV2.sol](#)) through page operations, which makes it easy to create and manage your subscriptions.
 
-For more, please refer to：[Get a Random Number](./Get%20a%20Random%20Number)
+  > **Tip:** Using Subscription Management Dapp is an option for you to create and manage subscriptions. If you are familiar enough with the VRFCoordinatorV2.sol, you can create and manage your subscriptions directly through you own contracts. [Here](./Get%20a%20Random%20Number) are some references for you.
 
+- **Consumer**: Every contract that needs to use random numbers is considered a consumer.
 
+- **VRF Node**:  VRF Service is an off-chain system responsible for monitoring random number requests on the chain, generating verifiable random numbers, and writing them into on-chain contracts. The nodes in the current system are limited, but it is in the process of being polished into a decentralized system.
 
 
 
