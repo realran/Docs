@@ -1,4 +1,3 @@
-
 One simple example is shown below to demonstrate how to use Remix IDE to deploy the `VRFConsumerV2.sol` contract on PlatON and get random values. 
 
 ##  Preparation
@@ -6,14 +5,14 @@ One simple example is shown below to demonstrate how to use Remix IDE to deploy 
 - The Remix IDE
 - PlatON RPC URL:
 	- Mainnet: `https://openapi2.platon.network/rpc`
-	- Devnet: `https://devnetopenapi2.platon.network/rpc`
+	- Devnet: `https://devnet2openapi.platon.network/rpc`
 - `VRFCoordinator` contract address：
 	- Mainnet: `/`
-	- Devnet: `0xFE5F2A9d5227Fb1c4541e3D67aaF516d7d51495C`
+	- Devnet2: `0x67dc19ca89EA3D322B8C7cC4AD2B3BA7bDF2d089`
 - `Key Hash`
 	- Mainnet: `/`
-	- Devnet: `0x78e96b19f860056881cc2552c8f8083fa1dbed8a5ab010d3626a4000fb528e9f`
-- Faucet (optional): `https://faucet.platon.network/faucet`
+	- Devnet: `0x818b4b257c281d2e4db77e3bb13733185a31ab805d863047ef7093e2379e87cd`
+- Faucet (optional): `https://devnet2faucet.platon.network/faucet`
 
 ## MetaMask Setup
 
@@ -189,7 +188,7 @@ contract VRFConsumerV2 is VRFConsumerBaseV2 {
 
   - `s_subscriptionId`: the subscription ID.
   - `keyHash`: the proving key hash key associated with the bls public key.
-  - `vrfCoordinator`: the address of the PlatON VRFCoordinator contract.
+  - `vrfCoordinator`: the address of the VRFCoordinator contract.
   - `s_randomWords`: used to store random values.
 
 
