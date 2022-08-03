@@ -22,7 +22,7 @@ MetaMask is the most widely used browser plug-in wallet and users can easily int
 
 ### Import VRFContract Repo
 
-Open the [VRFConsumerV2.sol](https://remix.ethereum.org/#url=https://github.com/realran/VRFContract/blob/main/sample/v2.1.0/VRFConsumerV2.sol) contract in Remix.
+Open the [VRFConsumerV2.sol](https://remix.ethereum.org/#url=https://github.com/realran/VRFContract/blob/v2.1/sample/VRFConsumerV2.sol) contract in Remix.
 
 ![contracts_structure](./imgs/contracts_structure.png) 
 
@@ -65,7 +65,7 @@ Before compiling, please get the `keyHash` and `VRFCoordinator` address based on
 
 ###  Load `VRCoordinatorV2.sol` contract and recharge subscription
 
-1. Open the [VRCoordinatorV2.sol](https://remix.ethereum.org/#url=https://github.com/realran/VRFContract/blob/main/sample/v2.1.0/VRFCoordinatorV2.sol) contract in Remix and compile it.
+1. Open the [VRCoordinatorV2.sol](https://remix.ethereum.org/#url=https://github.com/realran/VRFContract/blob/v2.1/sample/VRFCoordinatorV2.sol) contract in Remix and compile it.
 
 2. Load `VRCoordinatorV2.sol` contract, fill in the `VRFCoordinator` address in the red box 3 and click the At Address button
 
