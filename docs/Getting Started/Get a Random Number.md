@@ -1,4 +1,6 @@
 ---
+id: Get a Random Number
+title: Get a Random Number
 sidebar_position: 2
 ---
 
