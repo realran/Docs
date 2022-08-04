@@ -1,5 +1,5 @@
 
-One simple example is shown below to demonstrate how to use Remix IDE to deploy the `VRFConsumerV2.sol` contract on PlatON and get random values. 
+This is an example of a consumer contract that also owns and manages the subscription. We will use Remix to demonstrate how to use it.
 
 ##  Preparation
 - MetaMask
@@ -38,7 +38,7 @@ import "@realrancrypto/contracts@2.1.0/src/interfaces/VRFCoordinatorV2Interface.
 import "@realrancrypto/contracts@2.1.0/src/VRFConsumerBaseV2.sol";
 ```
 
-The contract also includes pre-configured values for the necessary request parameters such as `callbackGasLimit`, `requestConfirmations`. When you deploy your own contract, you can use the same value as provided in the contract. For the parameter `keyHash`, `vrfCoordinator`, You can change its value based on different networks.
+The contract also includes pre-configured values for the necessary request parameters such as `callbackGasLimit`, `requestConfirmations`. When you deploy your own contract, you can use the same value as provided in the contract. For the parameter `keyHash`, `vrfCoordinator`, you can change its value based on different networks.
 
 ###  Compile the `VRFConsumerV2.sol` contract
 
