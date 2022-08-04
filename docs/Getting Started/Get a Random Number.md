@@ -19,7 +19,6 @@ This guide assumes that you know how to create and deploy smart contracts on Pla
 - [PlatON Devnet2 Faucet](https://devnet2faucet.platon.network/faucet)
 
 
-
 ## How to get random number
 
 We will demonstrate how to use the `Subcription Management Dapp` to get random numbers on the `PlatON Devnet2` network. The process is as follows:
