@@ -24,9 +24,9 @@ Composition introduction：
 
 - **Developer** : It can represent an individual developer or a team that need to use the VRF system. It should be noted that the wallet address that created the subscription will become its owner, and has the right to manage the consumers and funds belonging to the subscription. At the same time, anyone can recharge the subscription, not just the owner.
 
-- **[Subcription Management Dapp](https://vrf.realran.com/)**:  This is a subscription management platform. This allows you to interact with on-chain contracts([VRFCoordinatorV2.sol](#)) through page operations, which makes it easy to create and manage your subscriptions.
+- **[Subcription Management Dapp](https://vrf.realran.com/)**:  This is a subscription management platform. This allows you to interact with on-chain contracts([VRFCoordinatorV2.sol](https://github.com/realran/VRFContract/blob/main/dev/VRFCoordinatorV2.sol)) through page operations, which makes it easy to create and manage your subscriptions.
 
-  > **Tip:** Using Subscription Management Dapp is an option for you to create and manage subscriptions. If you are familiar enough with the VRFCoordinatorV2.sol, you can create and manage your subscriptions directly through you own contracts. [Here](./Get%20a%20Random%20Number) are some references for you.
+  > **Tip:** Using Subscription Management Dapp is an option for you to create and manage subscriptions. If you are familiar enough with the VRFCoordinatorV2.sol, you can create and manage your subscriptions directly through you own contracts. [Here](./Examples) are some references for you.
 
 - **Consumer**: Every contract that needs to use random numbers is considered a consumer.
 
