@@ -1,3 +1,9 @@
+---
+id: Examples
+title: Examples
+sidebar_position: 3
+---
+
 One simple example is shown below to demonstrate how to use Remix IDE to deploy the `VRFConsumerV2.sol` contract on PlatON and get random values. 
 
 ## Deploy a VRF consumer contract
