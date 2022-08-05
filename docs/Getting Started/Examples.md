@@ -2,7 +2,6 @@
 id: Examples
 title: Examples
 sidebar_position: 3
-
 ---
 
 This is an example of a consumer with subscription management. This tutorial will show how to use Remix to deploy this contract and get random numbers from it.
@@ -60,7 +59,7 @@ When you finish the contract deployment, you will find that you have completed t
 
 Find your `subId` in [Subscription Management Dapp](https://vrf.realran.com/), connect to your wallet and click **Add Funds** to recharge for you subscription. 
 
-<img src="./imgs/fund.jpg" width = "1000" height = "400" div align=center/>
+<img src="./imgs/fund.jpg" width = "1000" height = "400" align=center/>
 
 
 
