@@ -59,7 +59,7 @@ When you finish the contract deployment, you will find that you have completed t
 
 Find your `subId` in [Subscription Management Dapp](https://vrf.realran.com/), connect to your wallet and click **Add Funds** to recharge for you subscription. 
 
-<img src="./imgs/fund.jpg" width = "1000" height = "400" align=center/>
+<img src="./imgs/fund.jpg" width = "1000" height = "400" align="center"/>
 
 
 
