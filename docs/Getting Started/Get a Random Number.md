@@ -14,7 +14,7 @@ This guide assumes that you know how to create and deploy smart contracts on Pla
 - [MetaMask](https://metamask.io/)
 - [PlatON Devnet2 Faucet](https://devnet2faucet.platon.network/faucet)
 
-For more parameter information, please refer to [Contract Parameters](./Coordinator Parameters).
+For more parameter information, please refer to [Contract Parameters](./Coordinator%20Parameters.md).
 
 ## How to get random number
 
