@@ -2,91 +2,94 @@
 id: Examples
 title: Examples
 sidebar_position: 3
+
 ---
 
-One simple example is shown below to demonstrate how to use Remix IDE to deploy the `VRFConsumerV2.sol` contract on PlatON and get random values. 
+This is an example of a consumer with subscription management. This tutorial will show how to use Remix to deploy this contract and get random numbers from it.
 
-## Deploy a VRF consumer contract
+This tutorial will be conducted on the **PlatON devnet2** network, the contract address and parameters information about the network can be found in [Contract Parameters](/Contract%20Parameters).
 
-### Import VRFContract Repo
+**Table of contents**
 
-Open the [VRFConsumerV2.sol](https://remix.ethereum.org/#url=https://github.com/realran/VRFContract/blob/main/sample/v2.1.0/VRFConsumerV2.sol) contract in Remix.
+- Deploy the [ConsumerWithSubManager.sol](https://remix.ethereum.org/#url=https://github.com/realran/VRFContract/blob/main/sample/ConsumerWithSubManager.sol) contract
+- Funds for the subscription
+- Request random number
 
-![contracts_structure](./imgs/contracts_structure.png) 
+> **Note**: This contract is both a Consumer and a subscription manager, and the owner of the subscription is this contract, not the address that created the contract. So you will be able to see the subscription information in the [Subscription Management Dapp](https://vrf.realran.com/), but it will not appear in **My Subscriptions** page because you cannot import contract accounts into Metamask.
 
-For this example, use the `VRFConsumerV2.sol` sample contract in the sample folder. This contract imports the following dependencies:
+
+
+## Deploy the [ConsumerWithSubManager.sol](https://remix.ethereum.org/#url=https://github.com/realran/VRFContract/blob/main/sample/ConsumerWithSubManager.sol) contract
+
+### Import Contract
+
+Click [ConsumerWithSubManager.sol](https://remix.ethereum.org/#url=https://github.com/realran/VRFContract/blob/main/sample/ConsumerWithSubManager.sol) to open it in Remix, you will get this：
+
+<img src="./imgs/file-structure.png" width = "300" height = "100" div align=center/>
+
+This contract imports the following dependencies:
+
   - `VRFCoordinatorV2Interface.sol`
   - `VRFConsumerBaseV2.sol`
 
-The sample contract imports the VRFContract codebase and uses relative paths to import dependencies. However, it is not a must. You could directly import dependencies from [NPM](https://www.npmjs.com/package/@realrancrypto/contracts) without loading the codebase. To do it, just add codes at the beginning of your consumer contract:
-
-```
-import "@realrancrypto/contracts@2.1.0/src/interfaces/VRFCoordinatorV2Interface.sol";
-import "@realrancrypto/contracts@2.1.0/src/VRFConsumerBaseV2.sol";
-```
-
-The contract also includes pre-configured values for the necessary request parameters such as `callbackGasLimit`, `requestConfirmations`. When you deploy your own contract, you can use the same value as provided in the contract. For the parameter `keyHash`, `vrfCoordinator`, You can change its value based on different networks.
-
 ###  Compile the `VRFConsumerV2.sol` contract
 
-Before compiling, please get the `keyHash` and `VRFCoordinator` address based on the network in the <a href="#Preparation">Preparation section</a>. In the `VRFConsumerV2.sol` contract, use **Devnet's** `VRFCoordinator` address.
+Before you compile it, plevase check that the values of the **KeyHash** and **Coordinator** **address** in your contract are correct!
 
-![consumer_compile](./imgs/consumer_compile.png)
+Right click on the contract file and select compile:
 
-1. Open the `VRFConsumerV2.sol` contract in Remix.
-2. Click the **Solidity compiler** tab on the left sidebar.
-3. Click the **Compile VRFConsumerV2.sol** button. Ignore the warnings here.
+<img src="./imgs/compile.jpg" width = "300" height = "200" div align=center/>
 
-###  Deploy the `VRFConsumerV2.sol` contract
+###  Deploy the  contract
 
-![consumer_deploy](./imgs/consumer_deploy.png)
+<img src="./imgs/deploy.jpg" width = "300" height = "400" div align=center/>
 
 1. On the Remix left sidebar, click the **Deploy & run transactions** tab.
 
 2. select the **Injected Provider - Metamask** Environment.
 
-3. Select the `VRFConsumerV2` contract and click the **Deploy** button. MetaMask opens and asks you to confirm the transaction.
+3. Select the `ConsumerWithSubManager` contract.
 
-4. A subscription is automatically created when the contract is deployed, and the subscription ID is queried.
+4. Click the **Deploy** button.  Then Metamask will detect your transaction and request to send it.
 
-![consumer_subscriptionId](./imgs/consumer_subscriptionId.png)
+When you finish the contract deployment, you will find that you have completed the creation of the subscription, the creation of the consumer, and the addition of the consumer to the subscription.
 
-###  Load `VRCoordinatorV2.sol` contract and recharge subscription
+<img src="./imgs/subId.png" width = "300" height = "200" div align=center/>
 
-1. Open the [VRCoordinatorV2.sol](https://remix.ethereum.org/#url=https://github.com/realran/VRFContract/blob/main/sample/v2.1.0/VRFCoordinatorV2.sol) contract in Remix and compile it.
+###  Funds the subscription
 
-2. Load `VRCoordinatorV2.sol` contract, fill in the `VRFCoordinator` address in the red box 3 and click the At Address button
+Find your `subId` in [Subscription Management Dapp](https://vrf.realran.com/), connect to your wallet and click **Add Funds** to recharge for you subscription. 
 
-![coordinator_deploy](./imgs/coordinator_deploy.png) 
+<img src="./imgs/fund.jpg" width = "1000" height = "400" div align=center/>
 
-3.  Recharge subscription, in the example, recharge 1 LAT to the subscription with ID 29
 
-![recharge_subscriptionId](./imgs/recharge_subscriptionId.png)
 
 ### Request random values
 
-The deployed `VRFConsumerV2` contract requests random values from `VRFCoordinator`, receives those values, and stores them in the `s_randomWords` array. Run the `requestRandomWords()` function to request them.
+In remix to initiate a request by calling the **requestRandomWords** method. Before that, enter the number of random numbers you want in the input box.
 
-1. Request 10 VRF values
+<img src="./imgs/request.jpg" width = "380" height = "350" div align=center/>
 
-![consumer_request](./imgs/consumer_request.png)
+When you see both `Request` and `Request fulfilled` transactions are successful on the **Subscription Management Dapp** page, like the following, it proves that you have successfully obtained the random number.
 
-2. Get the 10th VRF value at index 9
+<img src="./imgs/result.jpg" width = "1000" height = "100" div align=center/>
 
-![consumer_ret](./imgs/consumer_ret.png)
+The random numbers are stored in `s_randomWords`, you can verify your results by querying the value of this parameter.
 
-## Analyze the `VRFConsumerV2` contract
+
+
+## Analyze the ConsumerWithSubManager contract
 
 As a consumer of random numbers, the Consumer contract also has subscription management functions, including `createSubscription`, `addConsumer`, `removeConsumer`, and `cancelSubscription`. Therefore, this contract has the authority to manage subscriptions. You can split Consumer and Subscription Management according to your actual usage scenarios.
 
- ```
+```
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 import "@realrancrypto/contracts@2.1.0/src/interfaces/VRFCoordinatorV2Interface.sol";
 import "@realrancrypto/contracts@2.1.0/src/VRFConsumerBaseV2.sol";
 
-contract VRFConsumerV2 is VRFConsumerBaseV2 {
+contract ConsumerWithSubManager is VRFConsumerBaseV2 {
 
   VRFCoordinatorV2Interface COORDINATOR;
 
@@ -168,9 +171,7 @@ contract VRFConsumerV2 is VRFConsumerBaseV2 {
     _;
   }
 }
- ```
-
- In this example, The `VRFConsumerV2` contract address is the `VRFCoordinator` subscription owner and uses that subscription. The consumer contract uses static configuration parameters.
+```
 
  The contract includes the following parameters:
 
