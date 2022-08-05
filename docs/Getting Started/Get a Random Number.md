@@ -8,22 +8,13 @@ This guide explains how to get random values using a simple contract to request 
 
 ##  Preparation
 
-- PlatON RPC URL:
-  - Mainnet: `https://openapi2.platon.network/rpc`
-  - Devnet: `https://devnet2openapi.platon.network/rpc`
-- `VRFCoordinator` contract address：
-  - Mainnet: `/`
-  - Devnet2: `0x67dc19ca89EA3D322B8C7cC4AD2B3BA7bDF2d089`
-- `Key Hash`
-  - Mainnet: `/`
-  - Devnet: `0x818b4b257c281d2e4db77e3bb13733185a31ab805d863047ef7093e2379e87cd`
-
 This guide assumes that you know how to create and deploy smart contracts on PlatON Devnet2 using the following tools:
 
 - [The Remix IDE](https://remix.ethereum.org/)
 - [MetaMask](https://metamask.io/)
 - [PlatON Devnet2 Faucet](https://devnet2faucet.platon.network/faucet)
 
+For more parameter information, please refer to [Contract Parameters](./Coordinator Parameters).
 
 ## How to get random number
 
@@ -32,7 +23,7 @@ We will demonstrate how to use the `Subcription Management Dapp` to get random n
 1. **Link to Subcription Management Dapp**: Open [Subcription Management Dapp](https://vrf.realran.com/), link it to Metamask and set  it to use the PlatON Devnet2 network. Then please check your wallet for Whether the LAT for testing is enough, otherwise, you can get more from [faucet](https://devnet2faucet.platon.network/faucet);
 2. **Create subscription**: Click **My Subscriptions** on the homepage, you will enter the subscription management page corresponding to the current wallet address, where you can do a series of operations, such as creating a subscription and funding it,  and then adding VRF consumer to the specified subscription etc.; 
 3. **fund the subscription**: After completing the creation according to the instructions on the **My Subscriptions** page, you can fund the subscription. Any address can fund your subscription, but only the owner of the subscription can manage the subscription's balance;
-4. **Deploy the Consumer contract** : You can refer to the [RandomNumberConsumer](#) sample contract to finish your own consumer contract and deploy it in Remix. **Note that** before deployment, you need to fill in the subId obtained after creating the subscription above into your own Consumer contract;
+4. **Deploy the Consumer contract** : You can refer to the [RandomNumberConsumer](https://remix.ethereum.org/#url=https://github.com/realran/VRFContract/blob/main/sample/RandomNumberConsumer.sol) sample contract to finish your own consumer contract and deploy it in Remix. **Note that** before deployment, you need to fill in the subId obtained after creating the subscription above into your own Consumer contract;
 5. **Add Consumer contract to subscription**: On the **My Subscriptions** page, click `Add Consumer` to add the address of the consumer contract deployed in the previous step to the specified subscription. You can proceed to the next test if you add it successfully;
 6. **Get random numbers in Consumer**: It is a good choice to use remix to interact with the Consumer contract. You need to initiate a transaction requesting random numbers by calling the `requestRandomWords` method. In this transaction, you can use the `numWords` parameter to control the number of random numbers you want to get.
 7. **Result verification**: In this example, the random number will be stored in `s_randomWords`. You can check the value of this parameter to confirm whether the random number is obtained. If you get the same result as the picture below, congratulations on getting the random number successfully
