@@ -37,11 +37,11 @@ Before you compile it, plevase check that the values of the **KeyHash** and **Co
 
 Right click on the contract file and select compile:
 
-<div align=center><img src="https://github.com/realran/Docs/blob/main/docs/Getting%20Started/imgs/compile.jpg" width = "300" height = "200"  /></div>
+<div align=center><img src="https://github.com/realran/Docs/blob/main/docs/Getting%20Started/imgs/compile.jpg?raw=true" width = "300" height = "200"  /></div>
 
 ###  Deploy the  contract
 
-<div align=center><img src="https://github.com/realran/Docs/blob/main/docs/Getting%20Started/imgs/deploy.jpg" width = "300" height = "400" /></div>
+<div align=center><img src="https://github.com/realran/Docs/blob/main/docs/Getting%20Started/imgs/deploy.jpg?raw=true" width = "300" height = "400" /></div>
 
 1. On the Remix left sidebar, click the **Deploy & run transactions** tab.
 
@@ -53,13 +53,13 @@ Right click on the contract file and select compile:
 
 When you finish the contract deployment, you will find that you have completed the creation of the subscription, the creation of the consumer, and the addition of the consumer to the subscription.
 
-<div align=center><img src="https://github.com/realran/Docs/blob/main/docs/Getting%20Started/imgs/subId.png" width = "300" height = "200" /></div>
+<div align=center><img src="https://github.com/realran/Docs/blob/main/docs/Getting%20Started/imgs/subId.png?raw=true" width = "300" height = "200" /></div>
 
 ###  Funds the subscription
 
 Find your `subId` in [Subscription Management Dapp](https://vrf.realran.com/), connect to your wallet and click **Add Funds** to recharge for you subscription. 
 
-<div align=center><img src="https://github.com/realran/Docs/blob/main/docs/Getting%20Started/imgs/fund.jpg" width = "1000" height = "400" /></div>
+<div align=center><img src="https://github.com/realran/Docs/blob/main/docs/Getting%20Started/imgs/fund.jpg?raw=true?raw=true" width = "1000" height = "400" /></div>
 
 
 
@@ -71,7 +71,7 @@ In remix to initiate a request by calling the **requestRandomWords** method. Bef
 
 When you see both `Request` and `Request fulfilled` transactions are successful on the **Subscription Management Dapp** page, like the following, it proves that you have successfully obtained the random number.
 
-<div align=center><img src="https://github.com/realran/Docs/blob/main/docs/Getting%20Started/imgs/result.jpg" width = "1000" height = "100"/></div>
+<div align=center><img src="https://github.com/realran/Docs/blob/main/docs/Getting%20Started/imgs/result.jpg?raw=true" width = "1000" height = "100"/></div>
 
 The random numbers are stored in `s_randomWords`, you can verify your results by querying the value of this parameter.
 
