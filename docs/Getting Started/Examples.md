@@ -24,7 +24,7 @@ This tutorial will be conducted on the **PlatON devnet2** network, the contract 
 
 Click [ConsumerWithSubManager.sol](https://remix.ethereum.org/#url=https://github.com/realran/VRFContract/blob/main/sample/ConsumerWithSubManager.sol) to open it in Remix, you will get this：
 
-<img src="https://github.com/realran/Docs/blob/main/docs/Getting%20Started/imgs/file-structure.png" width = "300" height = "100" align="center"/>
+<img src="https://github.com/realran/Docs/blob/main/docs/Getting%20Started/imgs/file-structure.png?raw=true" width = "300" height = "100" align="center"/>
 
 This contract imports the following dependencies:
 
