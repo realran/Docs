@@ -23,6 +23,7 @@ This tutorial will be conducted on the **PlatON devnet2** network, the contract 
 ### Import Contract
 
 Click [ConsumerWithSubManager.sol](https://remix.ethereum.org/#url=https://github.com/realran/VRFContract/blob/main/sample/ConsumerWithSubManager.sol) to open it in Remix, you will get this：
+
 ![file-structure](https://github.com/realran/Docs/blob/main/docs/Getting%20Started/imgs/file-structure.png?raw=true)
 
 This contract imports the following dependencies:
@@ -39,6 +40,7 @@ Right click on the contract file and select compile:
 ![compile](https://github.com/realran/Docs/blob/main/docs/Getting%20Started/imgs/compile.jpg?raw=true)
 
 ###  Deploy the  contract
+
 ![deploy](https://github.com/realran/Docs/blob/main/docs/Getting%20Started/imgs/deploy.jpg?raw=true)
 
 1. On the Remix left sidebar, click the **Deploy & run transactions** tab.
@@ -50,6 +52,7 @@ Right click on the contract file and select compile:
 4. Click the **Deploy** button.  Then Metamask will detect your transaction and request to send it.
 
 When you finish the contract deployment, you will find that you have completed the creation of the subscription, the creation of the consumer, and the addition of the consumer to the subscription.
+
 ![subId](https://github.com/realran/Docs/blob/main/docs/Getting%20Started/imgs/subId.png?raw=true)
 
 ###  Funds the subscription
