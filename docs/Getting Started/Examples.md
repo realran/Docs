@@ -24,7 +24,7 @@ This tutorial will be conducted on the **PlatON devnet2** network, the contract 
 
 Click [ConsumerWithSubManager.sol](https://remix.ethereum.org/#url=https://github.com/realran/VRFContract/blob/main/sample/ConsumerWithSubManager.sol) to open it in Remix, you will get this：
 
-<div align=center><img src="https://github.com/realran/Docs/blob/main/docs/Getting%20Started/imgs/file-structure.png?raw=true" width = "300" height = "100"></div>
+<div align=center> <img src="https://github.com/realran/Docs/blob/main/docs/Getting%20Started/imgs/file-structure.png?raw=true" width = "300" height = "100"></div>
 
 This contract imports the following dependencies:
 
@@ -59,7 +59,7 @@ When you finish the contract deployment, you will find that you have completed t
 
 Find your `subId` in [Subscription Management Dapp](https://vrf.realran.com/), connect to your wallet and click **Add Funds** to recharge for you subscription. 
 
-<div align=center><img src="https://github.com/realran/Docs/blob/main/docs/Getting%20Started/imgs/fund.jpg?raw=true?raw=true" width = "1000" height = "400"></div>
+<div align=center><img src="https://github.com/realran/Docs/blob/main/docs/Getting%20Started/imgs/fund.jpg?raw=true" width = "1000" height = "400"></div>
 
 
 
