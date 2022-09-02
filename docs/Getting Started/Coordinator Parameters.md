@@ -25,14 +25,15 @@ Fee parameters are configured in the coordinator contract and specify the premiu
 
 | **Parameter**                 | Value        |
 | :---------------------------- | :----------- |
-| VRF Coordinator               | comming soon |
-| KeyHash                       | comming soon |
-| Premium                       | comming soon |
+| VRF Coordinator               | 0x352981e09bd712d6b17184D08D456683A6859Ca2 |
+| KeyHash                       | 0xe4575574ec7483a8e35d9f210820a045db4939b54d0ff0e5b15f83ef1312e124 |
+| Premium                       | 10 LAT       |
 | Maximum Request Confirmations | 200          |
 | Minimum Confirmations         | 3            |
 | Maximum Consumers             | 100          |
 | Maximum Random Values         | 500          |
 | Maximum GasLimit              | 2500000      |
+| Maximum CallBackGasprice      | 2GVon        |
 
 #### PlatON Devnet2 Testnet
 
@@ -44,10 +45,10 @@ Fee parameters are configured in the coordinator contract and specify the premiu
 | :---------------------------- | :----------------------------------------------------------- |
 | VRF Coordinator               | 0x67dc19ca89EA3D322B8C7cC4AD2B3BA7bDF2d089                   |
 | KeyHash                       | 0x818b4b257c281d2e4db77e3bb13733185a31ab805d863047ef7093e2379e87cd |
-| Premium                       | 1000000 Gas （Assuming gasprice = 0.000000001, the premium is 0.001 LAT） |
+| Premium                       | 10 LAT                                                        |
 | Maximum Request Confirmations | 200                                                          |
 | Minimum Confirmations         | 3                                                            |
 | Maximum Consumers             | 100                                                          |
 | Maximum Random Values         | 500                                                          |
 | Maximum GasLimit              | 2500000                                                      |
-
+| Maximum CallBackGasprice      | 2GVon        |
